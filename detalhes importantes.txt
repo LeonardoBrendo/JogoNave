@@ -1,0 +1,2 @@
+Para inserir uma tela para atirar -> Project -> Project Settings -> Input Map. dentro de Input Map basta inserir a tecla deseja e seu nome.
+Essa configuração do Input Map deve ser chamada dentro do script do Player.

@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://nucubdj1gpeg"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_a0cvx"]
+[ext_resource type="Texture2D" uid="uid://v1us0v1knkke" path="res://Material rescue/Player/nave1.png" id="2_p6gpi"]
+[ext_resource type="Texture2D" uid="uid://dufyqeyrgkl56" path="res://Material rescue/Player/nave2.png" id="3_yov5a"]
+[ext_resource type="AudioStream" uid="uid://cp5tdnohsre58" path="res://Material rescue/sons/laser.wav" id="4_h78xu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y0qvp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_p6gpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yov5a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvi7c"]
+size = Vector2(799, 329)
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_a0cvx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y0qvp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(74.5, 6.5)
+shape = SubResource("RectangleShape2D_vvi7c")
+
+[node name="gastac" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[node name="atira" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_h78xu")
