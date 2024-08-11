@@ -1,0 +1,13 @@
+#Primeiro momento.
+Criar projeto.
+Adicionar arquivos da Pasta Material rescue
+
+Configuração inicial - ir em Project -> Project Settings - General - > Display -> Window : Widtg-> 640 e Height-> 480 e Resizable desmarca.
+
+Estrutura do projeto
+
+Player (kinematicBody)
+- AnimatedSprite -> em Frames (canto superior direito) adiciona o new spriteFrames. Vai para a pasta Player e joga as duas imagens de Player no espaço do SpriteFrames.
+- CollisionShape2D -> vai em shape e coloca a colisão do tipo New RectangleShape2D sobre a nave.
+- gastac(Timer) -> Wait Time 60 e autostart fica marcado como on.
+- atira(AudioStreamPlayer2D): vai em Stream -> load -> /Material rescue/sons.
