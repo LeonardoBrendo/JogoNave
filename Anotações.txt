@@ -1,13 +1,37 @@
-#Primeiro momento.
+#Primeiro momento (aula 1).
 Criar projeto.
 Adicionar arquivos da Pasta Material rescue
 
 Configuração inicial - ir em Project -> Project Settings - General - > Display -> Window : Widtg-> 640 e Height-> 480 e Resizable desmarca.
 
 Estrutura do projeto
-
-Player (kinematicBody)
+Cena 1
+Player (kinematicBody): adiciona um script ao nó.
+ vai na nave, após ter colocado todos nós e vai em Transform - > Rotation Degre - > Scale 0.1
 - AnimatedSprite -> em Frames (canto superior direito) adiciona o new spriteFrames. Vai para a pasta Player e joga as duas imagens de Player no espaço do SpriteFrames.
 - CollisionShape2D -> vai em shape e coloca a colisão do tipo New RectangleShape2D sobre a nave.
 - gastac(Timer) -> Wait Time 60 e autostart fica marcado como on.
 - atira(AudioStreamPlayer2D): vai em Stream -> load -> /Material rescue/sons.
+
+#Segundo momento (aula 2)
+Cena 2
+
+Laser (Area 2D): vai em Transform -> Scale x0.1 e y:0.1. 
+-- Cria-se um script para o Laser
+- Sprite: Texture -> Load e escolhe Material rescue/bullet
+- CollisionShape2D -> vai em Shape e adiciona o new rectangleShape, e esse shape retangular deve cobrir toda área do bullet.
+
+após criar as cenas e o script do Laser, deve-se chamar a cena do Laser no código da nave.
+
+deve-se adicionar uma tecla chamda atira. Para fazer isso deve ir em Project -> Project Settings -> Input Map, ponha o nome
+atira na tecla e usa-se o espaço nesta tecla.
+
+
+Cria-se um Node2D chamado Main, onde deve ser chamado o Player nele, por meio da corrente acima da Main.
+
+
+
+
+
+
+
