@@ -1,37 +1,15 @@
-#Primeiro momento (aula 1).
-Criar projeto.
-Adicionar arquivos da Pasta Material rescue
+Aula 3 - Alien
 
-Configuração inicial - ir em Project -> Project Settings - General - > Display -> Window : Widtg-> 640 e Height-> 480 e Resizable desmarca.
+Cena Alien (KinematicBody2D): vai em Transform -> Scale: x: 0.1 e y: 0.1
 
-Estrutura do projeto
-Cena 1
-Player (kinematicBody): adiciona um script ao nó.
- vai na nave, após ter colocado todos nós e vai em Transform - > Rotation Degre - > Scale 0.1
-- AnimatedSprite -> em Frames (canto superior direito) adiciona o new spriteFrames. Vai para a pasta Player e joga as duas imagens de Player no espaço do SpriteFrames.
-- CollisionShape2D -> vai em shape e coloca a colisão do tipo New RectangleShape2D sobre a nave.
-- gastac(Timer) -> Wait Time 60 e autostart fica marcado como on.
-- atira(AudioStreamPlayer2D): vai em Stream -> load -> /Material rescue/sons.
+--AnimatedSprite: vai em Frames e adiciona um new SpriteFrames, vai na pasta dos aliens e adiciona-os no ambiente do     	SpriteFrames. Sobre o player, marca Resource -> playing como on. no Ambiente dos spritesFrame, em animations, vai Newm 	Anim e adiciona um recurso "explosao". e na explosao adiciona todos os frames de explosão. as explosões devem ter speed 	(FPS): 8. nas explosões, em Resource -> Animation: default.
 
-#Segundo momento (aula 2)
-Cena 2
+--CollisiumShape2D: adiciona um shape circular sobre o alien.
 
-Laser (Area 2D): vai em Transform -> Scale x0.1 e y:0.1. 
--- Cria-se um script para o Laser
-- Sprite: Texture -> Load e escolhe Material rescue/bullet
-- CollisionShape2D -> vai em Shape e adiciona o new rectangleShape, e esse shape retangular deve cobrir toda área do bullet.
+--morte (Timer): Wait time: 0.1 e on Shot: on. deve fazer um sinal. Vai em Node, e conecta o timeout()
 
-após criar as cenas e o script do Laser, deve-se chamar a cena do Laser no código da nave.
+Cena Main
+---> Player
+---> Sprite: importa o sprite dentro de Sprite -> Texture. Em Offset, desmarca a opção Centered. Em Node2D -> Z Index -> Z Index: -1. Em seguida, conecta na Main, por meio da corrente, a cena Alien.
 
-deve-se adicionar uma tecla chamda atira. Para fazer isso deve ir em Project -> Project Settings -> Input Map, ponha o nome
-atira na tecla e usa-se o espaço nesta tecla.
-
-
-Cria-se um Node2D chamado Main, onde deve ser chamado o Player nele, por meio da corrente acima da Main.
-
-
-
-
-
-
-
+Cena Laser: vai em Node, e escolhe o sinal body_entered e conecta.

@@ -15,3 +15,9 @@ func _physics_process(delta):
 		position.x += speed*delta
 	else:
 		position.x -= speed*delta
+
+
+func _on_Laser_body_entered(body):
+	if body.name != "Player":
+		$Sprite.hide()
+		body.morte()
