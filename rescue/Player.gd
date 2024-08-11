@@ -10,6 +10,8 @@ var balap = preload("res://Laser.tscn")
 var lado = 1
 ##momento 2
 
+signal morreu
+
 func _ready():
 	$AnimatedSprite.play()
 	
@@ -48,4 +50,11 @@ func _physics_process(delta):
 		$AnimatedSprite.flip_h = false
 		
 		
-		
+func morre():
+	emit_signal("morreu")
+	$AnimatedSprite.stop()
+	
+func tomadano():
+	combustivel -= 10
+	if combustivel <= 0:
+		morre()
