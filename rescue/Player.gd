@@ -58,3 +58,7 @@ func tomadano():
 	combustivel -= 10
 	if combustivel <= 0:
 		morre()
+		
+func salva():
+	pass
+	
