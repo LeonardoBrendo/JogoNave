@@ -62,3 +62,9 @@ func tomadano():
 func salva():
 	pass
 	
+func carrega():
+	print(combustivel)
+	combustivel += 10
+	print(combustivel)
+	
+	
