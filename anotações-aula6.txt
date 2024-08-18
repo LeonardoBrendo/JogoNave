@@ -1,0 +1,12 @@
+Aula 6 - HUD
+
+Cena HUD(CanvasLayer): Cria-se o script para este nó
+
+--->pontos (Label): adiciona-se 000 no texto da label, align e valign devem ser marcados como center. deve-se fazer com que o label pegue de uma ponta a outra da largura. Vamos adicionar uma nova fonte, portanto deve-se ir em 
+Control -> Custom Fonts -> marca Font e deixa como new DynamicFont. Clica em DynamicFont, vai até Font -> Load e escolhe a fonte e o tamanho da fonte em Size:18
+--->combustível (TextureProgress): Deve-se ir em texture -> Nine Patch Stretch e marca on, em seguida arrasta o TextureProgress até as extremidades e leva para a parte inferior. ainda sobre o nó combustível, deve-se ir em Textures -> No Under usa o vermelho, no Progress usa a cor branca. Em Range -> Max Value: 100, Step:1 e value: 80
+
+
+Na cena Main, adiciona-se a cena HUD por meio da engrenagem.
+
+No script do player, deve-se fazer uma referência a HUD para torná-lo dinâmico (linha 12 de player), chama variavel ui dentro da função tomadano do player (linha 63). dentro da função salva (linha 66) chama ui.tomaponto. dentro da função carrega chama ui.alteracombustivel(combustivel).

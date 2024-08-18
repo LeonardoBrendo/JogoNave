@@ -1,16 +1,15 @@
 extends KinematicBody2D
 
-
 var speed = 200
 var vel = Vector2()
 var combustivel = 100
 
-##momento 2
 var balap = preload("res://Laser.tscn")
 var lado = 1
-##momento 2
 
 signal morreu
+
+onready var ui = get_node("/root/Main/HUD")
 
 func _ready():
 	$AnimatedSprite.play()
@@ -58,13 +57,14 @@ func tomadano():
 	combustivel -= 10
 	if combustivel <= 0:
 		morre()
+	ui.alteracombustivel(combustivel)
 		
 func salva():
-	pass
+	ui.tomaponto()
 	
 func carrega():
-	print(combustivel)
 	combustivel += 10
-	print(combustivel)
+	ui.alteracombustivel(combustivel)
+
 	
 	
