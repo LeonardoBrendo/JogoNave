@@ -1,5 +1,5 @@
 extends KinematicBody2D
-
+###
 var speed = 200
 var vel = Vector2()
 var combustivel = 100
