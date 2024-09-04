@@ -10,9 +10,11 @@ var lado = 1
 signal morreu
 
 onready var ui = get_node("/root/Main/HUD")
+onready var alvo = get_node("/root/Main/Player")
 
 func _ready():
 	$AnimatedSprite.play()
+	alvo.position.x = 2000
 	
 func _physics_process(delta):
 	vel.x = 0
@@ -22,10 +24,10 @@ func _physics_process(delta):
 		vel.y -= speed
 	if Input.is_action_pressed("ui_down"):
 		vel.y += speed
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right") and alvo.position.x < 3674:
 		vel.x += speed
 		lado = 1
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_left") and alvo.position.x > 365:
 		vel.x -= speed
 		lado = -1
 	
