@@ -8,6 +8,8 @@ var balap = preload("res://Laser.tscn")
 var lado = 1
 
 signal morreu
+###
+var jaemitiu = 0
 
 onready var ui = get_node("/root/Main/HUD")
 onready var alvo = get_node("/root/Main/Player")
@@ -52,8 +54,10 @@ func _physics_process(delta):
 		
 		
 func morre():
-	emit_signal("morreu")
-	$AnimatedSprite.stop()
+	if jaemitiu == 0:
+		emit_signal("morreu")
+		$AnimatedSprite.stop()
+		jaemitiu = 1
 	
 func tomadano():
 	combustivel -= 10
@@ -68,5 +72,5 @@ func carrega():
 	combustivel += 10
 	ui.alteracombustivel(combustivel)
 
-	
-	
+func _on_gastac_timeout():
+	combustivel -= 10

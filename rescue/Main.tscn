@@ -33,3 +33,28 @@ position = Vector2( 127.132, 241.435 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="geraalien" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="geraastronauta" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[node name="geracombustivel" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="fase" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[node name="reinicio" type="Timer" parent="."]
+wait_time = 3.0
+[connection signal="morreu" from="Player" to="." method="_on_Player_morreu"]
+[connection signal="timeout" from="geraalien" to="." method="_on_geraalien_timeout"]
+[connection signal="timeout" from="geraastronauta" to="." method="_on_geraastronauta_timeout"]
+[connection signal="timeout" from="geracombustivel" to="." method="_on_geracombustivel_timeout"]
+[connection signal="timeout" from="fase" to="." method="_on_fase_timeout"]
+[connection signal="timeout" from="reinicio" to="." method="_on_reinicio_timeout"]
